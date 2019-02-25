@@ -17,8 +17,8 @@ services:
       - -rpcpassword=dash
       - -rpcallowip=172.16.0.0/12
       - -datadir=/dash/data
-      - -zmqpubhashblock=tcp://127.0.0.1:28332
-      - -zmqpubrawtx=tcp://127.0.0.1:28332
+      - -zmqpubhashblock=tcp://0.0.0.0:28332
+      - -zmqpubrawtx=tcp://0.0.0.0:28332
     volumes:
       - /tmp/dash-node-testnet-data:/dash/data
   dashnode:
