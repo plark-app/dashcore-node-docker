@@ -1,0 +1,12 @@
+{
+  "description": "Dashcore + Insight API + Insight UI in Docker",
+  "repository": "https://github.com/plark/dashcore-node-docker",
+  "license": "LGPL-3.0",
+  "readme": "README.md",
+  "dependencies": {
+    "@dashevo/dashcore-lib": "0.16.9",
+    "@dashevo/dashcore-node": "5.0.2",
+    "@dashevo/insight-api": "2.0.1",
+    "@dashevo/insight-ui": "2.0.0"
+  }
+}

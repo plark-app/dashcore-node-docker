@@ -1,0 +1,40 @@
+{
+  "network": "${DASH_NETWORK_NAME}",
+  "port": 3001,
+  "services": [
+    "dashd",
+    "@dashevo/insight-api",
+    "@dashevo/insight-ui",
+    "web"
+  ],
+  "servicesConfig": {
+    "dashd": {
+      "connect": [{
+        "rpchost": "${DASH_RPC_HOST}",
+        "rpcport": ${DASH_RPC_PORT},
+        "rpcuser": "${DASH_RPC_USER}",
+        "rpcpassword": "${DASH_RPC_PASSWORD}",
+        "zmqpubrawtx": "tcp://${DASH_ZMQ_HOST}:${DASH_ZMQ_PORT}"
+      }]
+    },
+    "@dashevo/insight-ui": {
+      "routePrefix": "${UI_ROUTE_PREFIX}",
+      "apiPrefix": "${API_ROUTE_PREFIX}"
+    },
+    "@dashevo/insight-api": {
+      "routePrefix": "${API_ROUTE_PREFIX}",
+      "rateLimiterOptions": {
+        "limit": ${API_LIMIT_COUNT},
+        "internval": ${API_LIMIT_INTERVAL},
+        "whitelistLimit": ${API_LIMIT_COUNT},
+        "whitelistInterval": ${API_LIMIT_WHITELIST_INTERVAL},
+        "blacklistLimit": ${API_LIMIT_COUNT},
+        "blacklistInterval": ${API_LIMIT_BLACKLIST_INTERVAL},
+        "whitelist": ${API_LIMIT_WHITELIST_JSON},
+        "blacklist": ${API_LIMIT_BLACKLIST_JSON}
+      },
+      "enableCache": ${API_ENABLE_CACHE},
+      "disableRateLimiter": ${API_LIMIT_DISABLE}
+    }
+  }
+}

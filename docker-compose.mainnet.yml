@@ -1,0 +1,28 @@
+version: '3'
+services:
+  dashd:
+    image: dashpay/dashd:latest
+    ports:
+      - "9999:9999"
+    command:
+      - dashd
+      - -printtoconsole
+      - -server
+      - -addressindex
+      - -timestampindex
+      - -spentindex
+      - -disablewallet=1
+      - -rpcuser=dash
+      - -rpcpassword=dash
+      - -rpcallowip=172.16.0.0/12
+      - -datadir=/dash/data
+      - -zmqpubhashblock=tcp://127.0.0.1:28332
+      - -zmqpubrawtx=tcp://127.0.0.1:28332
+    volumes:
+      - /tmp/dash-node-data:/dash/data
+  dashnode:
+    image: dashnode
+    ports:
+      - "3001:3001"
+    environment:
+      DASH_RPC_HOST: dashd
