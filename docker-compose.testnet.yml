@@ -22,7 +22,7 @@ services:
     volumes:
       - /tmp/dash-node-testnet-data:/dash/data
   dashnode:
-    image: dashnode
+    image: plark/dashcore-node:latest
     ports:
       - "3001:3001"
     environment:
