@@ -4,9 +4,9 @@
   "license": "LGPL-3.0",
   "readme": "README.md",
   "dependencies": {
-    "@dashevo/dashcore-lib": "0.16.9",
-    "@dashevo/dashcore-node": "5.0.2",
-    "@dashevo/insight-api": "2.0.1",
-    "@dashevo/insight-ui": "2.0.0"
+    "@dashevo/dashcore-lib": "0.17.6",
+    "@dashevo/dashcore-node": "5.1.4",
+    "@dashevo/insight-api": "2.3.3",
+    "@dashevo/insight-ui": "2.0.10"
   }
 }
